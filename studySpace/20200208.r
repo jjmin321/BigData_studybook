@@ -200,7 +200,7 @@ table(outlier$sex)
 table(outlier$sex)
 table(outlier$score)
 
-# 2단계 - 이상치를 결측치로 변경
+# 2단계 - 이상치를 결측치로 변경  
 outlier$sex <- ifelse(outlier$sex == 1 | outlier$sex == 2, outlier$sex, NA)
 outlier$score <- ifelse(outlier$score >= 0 & outlier$score <= 5, outlier$score, NA)
 View(outlier)
