@@ -43,7 +43,7 @@ View(fruit_shop)
 
 # 통계 함수
 sum(fruit_shop$volume) #과일의 갯수의 총합계
-mean(fruit_shop$price) #과일의 가격의 평균
+mean(fruit_shop$price) #과일의 가격의 평균  
 max(fruit_shop$volume) #과일 재고량의 최댓값
 min(fruit_shop$price) #과일 가격의 최솟값 
 
@@ -80,7 +80,7 @@ df1 <- data.frame(name=c("kim", "Lee", "Park", "kang", "Han"),
                   age=c(33, 25, 41, 52, 29),
                   height=c(180, 178, 172, 176, 185), stringsAsFactors = FALSE)
 df1
-View(df1)
+View(df1) 
 dim(df1)
 df1[3,] # 3행만 출력 
 df1[4,2] # 4행 2열만 출력 
