@@ -14,12 +14,20 @@ fruit_shop <- data.frame(fruit = c("사과", "딸기", "수박", "포도", "바�
                          price = c(1500, 3000, 15000, 4500, 2500))
 View(fruit_shop)
 
-### 5. $ : $, 데이터 프레임의 변수를 
+### 5. $ : 데이터 프레임의 변수
 fruit_shop$fruit
 fruit_shop$price
 
-### 6. sum(), mean(), max(), min() : sum, mean, maximum, minimum, 데이터 통계 함수
+### 6. sum(), mean(), max(), min() : 데이터 통계 함수
 sum(fruit_shop$price) #총합계
 mean(fruit_shop$price) #평균
 max(fruit_shop$price) #최댓값
 min(fruit_shop$price) #최솟값 
+
+### 7. within(), 파생변수 생성 [dplyr 함수]
+mtcars <- within(mtcars, mc <- mpg/cyl)
+
+### 8. read_excel(), 엑셀 파일 불러오기 [readxl 함수]
+df_exam1 <- read_excel("/Users/jejeongmin/Documents/R/data1/excel_exam.xlsx")
+
+
