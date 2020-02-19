@@ -143,6 +143,8 @@ View(exam)
 # 1. filter()함수 - 조건에 따른 행(데이터, 레코드)를 추출 (dplyr패키지 안에 있음)
 # %>% - 디플라이어 패키지에서 사용하는 연산자, 파이프 연산자, 체인 연산자 
 # %in# - 매칭 연산자 
+exam <- filter(exam, class==3)
+View(exam)
 exam_ClassThree <- exam %>% filter(class == 3)
 exam_GeniusAtMath <- exam %>% filter(math >= 70)
 exam_ClassNotOne <- exam %>% filter(class != 1)
@@ -191,6 +193,11 @@ print(exam_averageHwy)
 
 # select() 함수 - 구하고자 하는 열(변수) 추출 
 exam %>% select(math, science)
+exam <- select(exam, math, science, english)
+View(exam)
+exam <- head(exam, 5)
+View(exam)
+exam <- arrange(exam, -science)
 exam %>% select(class, english, science)
 exam %>% select(-id, -english)
 exam %>%  select(-english) %>% filter(class == 1 | class ==2)

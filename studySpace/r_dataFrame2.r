@@ -15,7 +15,7 @@ View(df_csv_exam1)
 write.csv(df_csv_exam1, file = "/users/jejeongmin/documents/r/work/df_csv_exam1.csv")
  
 # 3. txt(메모장) 파일 불러오기/저장하기
-
+  
 df_txt_data1 <- read.table('../../data2/data_ex.txt')
 View(df_txt_data1)
 write.table(df_txt_data1, "/users/jejeongmin/documents/r/work/df_txt_exam1.txt")
