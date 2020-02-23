@@ -166,7 +166,7 @@ ggplot(data=airquality, aes(x=Temp)) + geom_histogram(binwidth=0.5)
 # 5. 선그래프의 응용 
 # 시간에 따른 저축률의 변화 - 기울기, y절편 활용 
 # y절편 : intercept - 12.18671, 기울기 : slope - -0.000544
-ggplot(data=eco, aes(x=date, y=psavert)) + geom_line() + geom_abline(intercept = 12.18671, slope = -0.000544)
+ggplot(data=eco, aes(x=date, y=psavert)) + geom_line() + geom_abline(intercept = 12.18671, slope = -0.000544)          
 
 # 시간에 따른 저축률의 변화 - 저축률의 평균 수평선을 활용 
 ggplot(data=eco, aes(x=date, y=psavert)) + geom_line() + geom_hline(yintercept = mean(eco$psavert))

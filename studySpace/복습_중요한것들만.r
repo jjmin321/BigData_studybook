@@ -20,12 +20,15 @@ df_exam1 <- read_excel("/Users/jejeongmin/Documents/R/data1/excel_exam.xlsx")
 df_csv_exam1 <- read.csv('../../data1/csv_exam.csv', stringsAsFactors = F) 
 df_txt_data1 <- read.table('../../data2/data_ex.txt')
 
+### 7. 결측치, 이상치 처리 
+# NA는 %>% filter(!is.na(score)) [dplyr]으로 처리 
+# 이상치는 boxplot(mpg$hwy)$stats [ggplot2]으로 확인후 ifelse로 NA로 변경 
+
 
 ################################## 데이터 통계 함수 ########################################
 
 ### 1. table(is.na()) : NA 수를 TRUE FALSE로 알려주는 함수
 table(is.na(df))
-# NA는 %>% filter(!is.na(score)) 으로 처리해주자 
 
 ### 2. sum(), mean(), max(), min(), median(), sd(), n(): 데이터 통계 함수
 sum(fruit_shop$price) #총합계
@@ -49,3 +52,21 @@ mpg_class_desc <- mpg %>% group_by(class) %>%  # group_by로 변수별로 정렬
                   summarise(mean_cty = mean(cty)) # 정렬된 변수를 통해 새로운 값을 생성해줌
 
 ################################ 데이터 시각화 함수 ########################################
+
+### 1. 산점도 - x축, y축에 점으로 데이터를 표현, 변수와 변수와의 관계를 나타낼 때 사용
+ggplot(data=mpg, aes(x = displ, y = hwy)) + # 데이터, 축
+      geom_point() + # 그래프의 종류 
+      xlim(3, 6) + # x축의 범위 
+      ylim(10, 30) # y축의 범위
+
+### 2. 막대그래프 - 데이터의 크기(값)을 막대로 표현, 그룹간의 차이를 나타낼 때 사용 
+#정렬 x 
+ggplot(data=mpg_drv_hwy, aes(x=drv, y=mean_hwy)) + geom_col()
+
+#정렬 o 
+ggplot(data=mpg_drv_hwy, aes(x=reorder(drv, -mean_hwy), y=mean_hwy)) + geom_col()
+
+#빈도 
+ggplot(data = mpg, aes(x=drv)) + geom_bar() 
+
+### 3. 선그래프 - 
