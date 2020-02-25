@@ -96,6 +96,7 @@ ggplot(data=mpg, aes(x = displ, y = hwy)) + # 데이터, 축
       ylim(10, 30) # y축의 범위
 ```
 <img width="507" src="https://user-images.githubusercontent.com/52072077/75213169-aae06900-57cc-11ea-9fff-8a2840594cf9.png">
+ 
 ```R
 ### 2. 막대그래프 - 데이터의 크기(값)을 막대로 표현, 그룹간의 차이를 나타낼 때 사용 
 
@@ -105,14 +106,15 @@ ggplot(data=mpg_drv_hwy, aes(x=drv, y=mean_hwy)) + geom_col()
 #정렬 o 
 ggplot(data=mpg_drv_hwy, aes(x=reorder(drv, -mean_hwy), y=mean_hwy)) + geom_col()
 ```
-
 <img width="507" src="https://user-images.githubusercontent.com/52072077/75213179-ae73f000-57cc-11ea-886d-eddd3cf8cd7d.png">
+
 ```R
 ### 3. 선그래프 - 시간에 따라 변화하는 데이터를 표현할 때 주로 사용, 시계열 그래프 
 ggplot(data=eco, aes(x=date, y=unemploy)) + geom_line(size=1, color="cyan")
 ```
 
 <img width="507" src="https://user-images.githubusercontent.com/52072077/75213279-f3982200-57cc-11ea-8c8c-c0860380caac.png">
+
 ```R
 ### 4. 상자그림 - 데이터의 분포를 직사각형 형태의 상자모양으로 표현 
 # 상자그림으로 데이터를 확인하면 평균을 볼 때보다 좀 더 데이터의 특징을 명확하게 파악 가능 
@@ -120,6 +122,7 @@ ggplot(data = mpg, aes(x=drv, y=hwy)) + geom_boxplot()
 ```
 
 <img width="507" src="https://user-images.githubusercontent.com/52072077/75213281-f4c94f00-57cc-11ea-8466-af80c7a92793.png">
+
 ```R
 ### 5. 히스토그램 - 도수분포를 기둥 모양의 그래프로 표현 
 ggplot(data=airquality, aes(x=Temp)) + geom_histogram(binwidth=0.5)
