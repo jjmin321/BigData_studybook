@@ -1,5 +1,5 @@
 ```R
-############################## 기초적이지만 중요한 것들 ####################################
+#################################### 기초적이지만 중요한 것들 ##########################################
 
 ### 1. ifelse : 데이터를 분석할 때 가장 많이 쓰이는 기초 문법 
 result <- ifelse(tot >= 210, 'pass', 'fail')
@@ -26,7 +26,7 @@ df_txt_data1 <- read.table('../../data2/data_ex.txt')
 # 이상치는 boxplot(mpg$hwy)$stats [ggplot2]으로 확인후 ifelse로 NA로 변경 
 
 
-################################## 데이터 통계 함수 ########################################
+####################################### 데이터 통계 함수 #############################################
 
 ### 1. table(is.na()) : NA 수를 TRUE FALSE로 알려주는 함수
 table(is.na(df))
@@ -52,14 +52,14 @@ score <- tail(score, 5) # score에서 뒤에서부터 값 5개만 가지고 옴
 mpg_class_desc <- mpg %>% group_by(class) %>%  # group_by로 변수별로 정렬을 함
                   summarise(mean_cty = mean(cty)) # 정렬된 변수를 통해 새로운 값을 생성해줌
 
-################################ 데이터 시각화 함수 ########################################
+##################################### 데이터 시각화 함수 #############################################
 
 ### 1. 산점도 - x축, y축에 점으로 데이터를 표현, 변수와 변수와의 관계를 나타낼 때 사용
 ggplot(data=mpg, aes(x = displ, y = hwy)) + # 데이터, 축
       geom_point() + # 그래프의 종류 
       xlim(3, 6) + # x축의 범위 
       ylim(10, 30) # y축의 범위
-<img width="507" alt="Screen Shot 2020-02-25 at 12 41 19" src="https://user-images.githubusercontent.com/52072077/75213169-aae06900-57cc-11ea-9fff-8a2840594cf9.png">
+<img width="507" src="https://user-images.githubusercontent.com/52072077/75213169-aae06900-57cc-11ea-9fff-8a2840594cf9.png">
 
 ### 2. 막대그래프 - 데이터의 크기(값)을 막대로 표현, 그룹간의 차이를 나타낼 때 사용 
 
@@ -69,22 +69,22 @@ ggplot(data=mpg_drv_hwy, aes(x=drv, y=mean_hwy)) + geom_col()
 #정렬 o 
 ggplot(data=mpg_drv_hwy, aes(x=reorder(drv, -mean_hwy), y=mean_hwy)) + geom_col()
 
-<img width="507" alt="Screen Shot 2020-02-25 at 12 41 39" src="https://user-images.githubusercontent.com/52072077/75213179-ae73f000-57cc-11ea-886d-eddd3cf8cd7d.png">
+<img width="507" src="https://user-images.githubusercontent.com/52072077/75213179-ae73f000-57cc-11ea-886d-eddd3cf8cd7d.png">
 
 ### 3. 선그래프 - 시간에 따라 변화하는 데이터를 표현할 때 주로 사용, 시계열 그래프 
 ggplot(data=eco, aes(x=date, y=unemploy)) + geom_line(size=1, color="cyan")
 
-<img width="507" alt="Screen Shot 2020-02-25 at 12 46 21" src="https://user-images.githubusercontent.com/52072077/75213279-f3982200-57cc-11ea-8c8c-c0860380caac.png">
+<img width="507" src="https://user-images.githubusercontent.com/52072077/75213279-f3982200-57cc-11ea-8c8c-c0860380caac.png">
 
 ### 4. 상자그림 - 데이터의 분포를 직사각형 형태의 상자모양으로 표현 
 # 상자그림으로 데이터를 확인하면 평균을 볼 때보다 좀 더 데이터의 특징을 명확하게 파악 가능 
 ggplot(data = mpg, aes(x=drv, y=hwy)) + geom_boxplot()
 
-<img width="507" alt="Screen Shot 2020-02-25 at 12 46 29" src="https://user-images.githubusercontent.com/52072077/75213281-f4c94f00-57cc-11ea-8466-af80c7a92793.png">
+<img width="507" src="https://user-images.githubusercontent.com/52072077/75213281-f4c94f00-57cc-11ea-8466-af80c7a92793.png">
 
 ### 5. 히스토그램 - 도수분포를 기둥 모양의 그래프로 표현 
 ggplot(data=airquality, aes(x=Temp)) + geom_histogram(binwidth=0.5)
 
-<img width="507" alt="Screen Shot 2020-02-25 at 12 46 46" src="https://user-images.githubusercontent.com/52072077/75213283-f561e580-57cc-11ea-94a9-198052ae4a1d.png">
+<img width="507" src="https://user-images.githubusercontent.com/52072077/75213283-f561e580-57cc-11ea-94a9-198052ae4a1d.png">
 
 ```
