@@ -15,7 +15,7 @@ fruit_shop <- data.frame(fruit = c("사과", "딸기", "수박", "포도", "바�
 
 ### 5. read_excel() : 엑셀 파일 불러오기 [readxl 함수]
 df_exam1 <- read_excel("/Users/jejeongmin/Documents/R/data1/excel_exam.xlsx")
-
+ 
 ### 6. read.csv(), read.table() : csv, txt 파일 불러오기
 df_csv_exam1 <- read.csv('../../data1/csv_exam.csv', stringsAsFactors = F) 
 df_txt_data1 <- read.table('../../data2/data_ex.txt')
@@ -75,3 +75,7 @@ ggplot(data=eco, aes(x=date, y=unemploy)) + geom_line(size=1, color="cyan")
 
 ### 4. 상자그림 - 데이터의 분포를 직사각형 형태의 상자모양으로 표현 
 # 상자그림으로 데이터를 확인하면 평균을 볼 때보다 좀 더 데이터의 특징을 명확하게 파악 가능 
+ggplot(data = mpg, aes(x=drv, y=hwy)) + geom_boxplot()
+
+### 5. 히스토그램 - 도수분포를 기둥 모양의 그래프로 표현 
+ggplot(data=airquality, aes(x=Temp)) + geom_histogram(binwidth=0.5)

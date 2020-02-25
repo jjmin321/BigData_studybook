@@ -7,7 +7,7 @@ library(dplyr)
 ##### 시각화 응용
 # 7. 그래프를 강조하는 방법 1 - 도형, 화살표, 텍스트
 # 자동차 무게(wt)에 따른 효율(mpg)를 산점도로 효율
-ggplot(data=mtcars, aes(x=wt, y=mpg)) + geom_point() + 
+ggplot(data=mtcars, aes(x=wt, y=mpg)) + geom_point() +
   annotate("rect", xmin=3, xmax=4, ymin=12, ymax =21, fill="cyan", alpha = 0.5) + 
   annotate("segment", x=2.5, xend=3.7, y=10, yend=17, color="pink", arrow=arrow()) +
   annotate("text", x=2.5, y=10, label="Important", color = "orange") +

@@ -127,7 +127,7 @@ ggplot(data=mpg_class, aes(x=reorder(class,-count), y=count)) + geom_col()
 eco <- economics
 
 # 시간에 따라 실업자 수와 증감 추이를 선그래프로 표현 
-ggplot(data=eco, aes(x=date, y=unemploy)) + geom_line(size=1, color="cyan")
+ggplot(data=eco, aes(x=date, y=unemploy)) + geom_line()
 
 # 시간에 따라 개인별 저축률의 증감 추이를 선그래프로 표현 
 View(eco)
